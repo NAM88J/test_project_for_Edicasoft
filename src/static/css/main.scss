@@ -1,0 +1,302 @@
+@import "import/reset";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+.main {
+  display: flex;
+  position: relative;
+  overflow-x: hidden;
+  &__area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1070px;
+    left: calc(50% - 535px);
+    &-form {
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 205px);
+      transform: translateY(-50%);
+      z-index: 1;
+      padding: 78px 53px 71px 59px;
+      width: 410px;
+      background: rgba(28, 28, 28, 0.9);
+      mix-blend-mode: normal;
+      border-radius: 10px;
+      &-input {
+        font-size: 16px;
+        line-height: 24px;
+        color: #1C1C1C;
+        padding: 12px 30px;
+        background: #FFFFFF;
+        border-radius: 4px;
+        width: 100%;
+        margin-bottom: 20px;
+        border: 0;
+        outline: 0;
+        &.error {
+          border: 1px solid #ff0000;
+        }
+      }
+      &-submit   {
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 700;
+        color: #000000;
+        padding: 8px;
+        text-align: center;
+        background: #0AD9C6;
+        border-radius: 6px;
+        width: 100%;
+        margin-bottom: 17px;
+        border: 0;
+        outline: 0;
+        transition: background 0.5s, color 0.5s;
+        cursor: pointer;
+        &:hover {
+          background: #f574d3;
+          color: #fff;
+        }
+      }
+      &-info {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 23px;
+        color: #7A7A7A;
+        text-align: center;
+      }
+    }
+    &-content {
+      width: 305px;
+      position: absolute;
+      left: -109px;
+      top: 50%;
+      z-index: 1;
+      transform: translateY(-50%);
+      margin-top: 12px;
+      &-text1 {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #999999;
+        margin-bottom: 7px;
+      }
+      &-title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 38px;
+        letter-spacing: -1.27px;
+        color: #000000;
+        margin-bottom: 29px;
+        br {
+          display: none;
+        }
+      }
+      &-text2 {
+        font-size: 16px;
+        line-height: 28px;
+        color: #7A7A7A;
+      }
+    }
+  }
+  &__col {
+    width: 50%;
+    min-height: 770px;
+    position: relative;
+    &-left {
+      background: #E3F5F2;
+    }
+    &-right {
+      background: url('../img/cake.jpg') no-repeat left center
+    }
+  }
+}
+.content {
+    max-width: 1070px;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 20px;
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    &-colbig {
+      width: 65.5%;
+    }
+    &-colsmal {
+      width: 34.5%;
+    }
+    
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 34px;
+    letter-spacing: -0.5px;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+  &__description {
+    font-size: 16px;
+    line-height: 28px;
+    color: #7A7A7A;
+  }
+  &__imgright {
+    display: flex;
+    justify-content: flex-end;
+    img {
+      width: 100%;
+      padding-left: 72px;
+    }
+  }
+  &__imgleft {
+    display: flex;
+    justify-content: flex-start;
+    img {
+      width: 100%;
+      padding-right: 72px;
+    } 
+  }
+}
+
+// Fix desctop media
+@media (max-width: 1330px) {
+
+  .main {
+    &__area {
+      &-content {
+        left: 20px; 
+      }
+    }
+  }
+}
+
+// Media tablet
+@media (max-width: 1069px) {
+  .main {
+    &__area {
+      width: 768px;
+      left: calc(50% - 384px);
+      &-form {
+        width: 343px;
+        padding: 40px 23px 35px 22px;
+        left: calc(50% + 10px);
+      }
+      &-content {
+        left: 30px;
+        margin-top: 0px;
+      }
+    }
+    &__col {
+      &-left {
+        width: 73%;
+      }
+      &-right {
+        width: 27%;
+        background: url(../img/cake.jpg) no-repeat -240px center;
+      }
+    }
+  }
+  .content {
+    max-width: 768px;
+    padding-top: 40px;
+    &__imgleft,
+    &__imgright {
+      order: -1;
+      min-height: 350px;
+      img {
+        padding-left: 0;
+        padding-right: 50px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__row {
+      align-items: inherit;
+      margin: 0 30px 30px;
+      &-colbig {
+        width: 56%;
+      }
+      &-colsmal {
+        width: 44%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Media mobile
+@media (max-width: 767px) {
+  .main {
+    &__area {
+      width: 375px;
+      left: calc(50% - 187.5px);
+      display: flex;
+      flex-direction: column;
+      &-form {
+        left: 15px;
+        transform: translateY(0);
+        position: relative;
+        top: 0;
+      }
+      &-content {
+        width: 280px;
+        position: relative;
+        left: 15px;
+        top: 0;
+        transform: translateY(0);
+        margin-top: 50px;
+        order: -1;
+        margin-bottom: 40px;
+        &-title {
+          font-size: 26px;
+          margin-bottom: 25px;
+          br {
+            display: inline-block
+          }
+        }
+      }
+    }
+    &__col {
+      min-height: 800px;
+      &-left {
+        width: 84%;
+      }
+      &-right {
+        width: 16%;
+        background: url(../img/cake.jpg) no-repeat -470px center;
+        background-size: auto 100%;
+      }
+    }
+  }
+  .content {
+    max-width: 375px;
+    &__imgleft,
+    &__imgright {
+      height: 240px;
+      min-height: auto;
+      margin-bottom: 20px;    
+      img {
+        padding-right: 0;
+      }
+    }
+    &__row {
+      align-items: inherit;
+      margin: 0 15px 15px;
+      flex-direction: column;
+      &-colbig,
+      &-colsmal {
+        width: 100%;
+      }
+    }
+    &__title {
+      margin-bottom: 15px;
+    }
+  }
+}
